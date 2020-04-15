@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "httploadgen", "httploadgen\httploadgen.csproj", "{E2914BC0-5571-40CB-A05C-A12B83A247FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5E97DCAD-9C0F-4A12-A3D1-F859582D26D6}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E2914BC0-5571-40CB-A05C-A12B83A247FD}.Debug|x64.ActiveCfg = Debug|x64
+		{E2914BC0-5571-40CB-A05C-A12B83A247FD}.Debug|x64.Build.0 = Debug|x64
+		{E2914BC0-5571-40CB-A05C-A12B83A247FD}.Release|x64.ActiveCfg = Release|x64
+		{E2914BC0-5571-40CB-A05C-A12B83A247FD}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D80F5ACF-BD7A-4C8C-A316-C268709F6765}
+	EndGlobalSection
+EndGlobal
