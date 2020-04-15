@@ -10,16 +10,17 @@ namespace HttpLoadGen
     {
         public static void Main()
         {
-            using var client = new HttpClient();
+            const uint Requests = 800000;
+            const uint Parallelism = 8;
+            const ushort Concurrency = 6;
             var uri = new Uri("http://localhost:5002/v0.1/locate", UriKind.Absolute);
-            const uint Requests = 200000;
-            const uint Parallelism = 10;
-            const ushort Concurrency = 8;
+            using var client = new HttpClient();
             Run(client, uri, Concurrency, Parallelism, Concurrency);
             GC.Collect();
+            var perThreadRequests = (Requests + Parallelism - 1) / Parallelism;
             var st = Stopwatch.StartNew();
-            Run(client, uri, Requests, Parallelism, Concurrency);
-            Console.WriteLine((long)Requests * Parallelism / st.Elapsed.TotalSeconds);
+            Run(client, uri, perThreadRequests, Parallelism, Concurrency);
+            Console.WriteLine(Math.Floor(perThreadRequests * Parallelism / st.Elapsed.TotalSeconds));
         }
 
         private static void Run(HttpClient client, Uri uri, uint requests, uint parallelism, ushort concurrency)
