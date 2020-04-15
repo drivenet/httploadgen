@@ -49,7 +49,9 @@ namespace HttpLoadGen
             var tasks = new Task<HttpResponseMessage>[concurrency];
             for (var i = 0; i < requests; i++)
             {
-                using var requestMessage = new HttpRequestMessage(HttpMethod.Post, uri) { Content = content };
+#pragma warning disable CA2000 // Dispose objects before losing scope -- HttpRequestMessage only disposes content and we would like to share it
+                var requestMessage = new HttpRequestMessage(HttpMethod.Post, uri) { Content = content };
+#pragma warning restore CA2000 // Dispose objects before losing scope
                 int taskIndex;
                 if (i >= concurrency)
                 {
